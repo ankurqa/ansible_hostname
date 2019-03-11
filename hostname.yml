@@ -8,7 +8,6 @@
         name: "{{s}}{{m}}{{e}}"
       register: x
       sudo: yes
-#      set_fact: m={{ m |int - 1 }}
       ignore_errors: yes
       with_items: m
     - debug:
