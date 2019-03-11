@@ -1,0 +1,16 @@
+- hosts: all
+  vars: 
+     middle: "{{m}}"
+  tasks:
+    - include_vars: "hostname.txt"
+    - name: setting hostname
+      hostname:
+        name: "{{s}}{{m}}{{e}}"
+      register: x
+      sudo: yes
+#      set_fact: m={{ m |int - 1 }}
+      ignore_errors: yes
+      with_items: m
+    - debug:
+        msg: "{{x}}"
+
