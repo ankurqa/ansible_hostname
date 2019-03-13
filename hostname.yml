@@ -2,10 +2,9 @@
   vars: 
      middle: "{{m}}"
   tasks:
-    - include_vars: "hostname.txt"
     - name: setting hostname
       hostname:
-        name: "{{s}}{{m}}{{e}}"
+        name: "{{m}}"
       register: x
       sudo: yes
       ignore_errors: yes
